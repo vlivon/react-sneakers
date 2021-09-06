@@ -37,7 +37,7 @@ function App() {
           <div className="cartTotalBlock">
             <ul >
 
-              <li className="d-flex">
+              <li className="d-flex mb-10">
                 <span>Итого:</span>
                 <div></div>
                 <b>21 498 руб.</b>
