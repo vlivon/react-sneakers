@@ -1,34 +1,26 @@
 
 
-function Drawer() {
+function Drawer({onClickCart, items = []}) {
     return (
-        <div style={{ display: "none" }} className="overlay">
+        <div className="overlay">
             <div className="drawer d-flex flex-column">
-                <h2 className="mb-30 d-flex justify-between ">Корзина <img className="removeBtn cu-p" src="/img/btn-remove.svg" alt="remove" /></h2>
+                <h2 className="mb-30 d-flex justify-between ">
+                    Корзина 
+                <img onClick={onClickCart} className="removeBtn cu-p" src="/img/btn-remove.svg" alt="remove" /></h2>
                 <div className="items flex">
-                    <div className="cartItem d-flex align-center mb-20">
+                    {items.map((obj) => (
+                        <div className="cartItem d-flex align-center mb-20">
 
-                        <div style={{ backgroundImage: 'url(/img/sneakers/1.jpg)' }} className="cartItemImg">
-
-                        </div>
-                        <div className="mr-20 flex">
-                            <p className="mb-5">Мужские Кроссовки Nike Blazer Mid Suede</p>
-                            <b>12999 руб.</b>
-                        </div>
-                        <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
-                    </div>
-
-                    <div className="cartItem d-flex align-center">
-
-                        <div style={{ backgroundImage: 'url(/img/sneakers/2.jpg)' }} className="cartItemImg">
+                        <div style={{ backgroundImage: `url(${obj.url})` }} className="cartItemImg">
 
                         </div>
                         <div className="mr-20 flex">
-                            <p className="mb-5">Мужские Кроссовки Nike Air Max 270</p>
-                            <b>12999 руб.</b>
+                            <p className="mb-5">{obj.name}</p>
+                            <b>{obj.price} руб.</b>
                         </div>
                         <img className="removeBtn" src="/img/btn-remove.svg" alt="remove" />
                     </div>
+                    ))}
 
 
 
